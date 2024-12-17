@@ -51,13 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="services\ITestCategoryRepository.cs" />
     <Compile Include="services\ITestRangeRepository.cs" />
+    <Compile Include="services\ITestRepository.cs" />
     <Compile Include="services\IUnitRepository.cs" />
     <Compile Include="TestCategoryRepository.cs" />
     <Compile Include="TestRangeRepository.cs" />
+    <Compile Include="TestRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

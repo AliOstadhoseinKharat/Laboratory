@@ -46,6 +46,12 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridRange = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.DescriptionText = new System.Windows.Forms.TextBox();
             this.clmnRangID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnFromAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnToAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,12 +62,6 @@
             this.clmnTestID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnTestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnHazard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.DescriptionText = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRange)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -238,58 +238,6 @@
             this.dataGridRange.Size = new System.Drawing.Size(944, 153);
             this.dataGridRange.TabIndex = 16;
             // 
-            // clmnRangID
-            // 
-            this.clmnRangID.HeaderText = "RangID";
-            this.clmnRangID.Name = "clmnRangID";
-            this.clmnRangID.Visible = false;
-            // 
-            // clmnFromAge
-            // 
-            this.clmnFromAge.HeaderText = "FromAge";
-            this.clmnFromAge.Name = "clmnFromAge";
-            // 
-            // clmnToAge
-            // 
-            this.clmnToAge.HeaderText = "ToAge";
-            this.clmnToAge.Name = "clmnToAge";
-            // 
-            // clmnGender
-            // 
-            this.clmnGender.HeaderText = "Gender";
-            this.clmnGender.Name = "clmnGender";
-            // 
-            // clmnFromValue
-            // 
-            this.clmnFromValue.HeaderText = "FromValue";
-            this.clmnFromValue.Name = "clmnFromValue";
-            // 
-            // clmnToValue
-            // 
-            this.clmnToValue.HeaderText = "ToValue";
-            this.clmnToValue.Name = "clmnToValue";
-            // 
-            // clmnDescription
-            // 
-            this.clmnDescription.HeaderText = "Description";
-            this.clmnDescription.Name = "clmnDescription";
-            // 
-            // clmnTestID
-            // 
-            this.clmnTestID.HeaderText = "clmnTestID";
-            this.clmnTestID.Name = "clmnTestID";
-            this.clmnTestID.Visible = false;
-            // 
-            // clmnTestName
-            // 
-            this.clmnTestName.HeaderText = "clmnTestName";
-            this.clmnTestName.Name = "clmnTestName";
-            // 
-            // clmnHazard
-            // 
-            this.clmnHazard.HeaderText = "clmnHazard";
-            this.clmnHazard.Name = "clmnHazard";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -317,7 +265,6 @@
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(59, 17);
             this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
             this.radioButton3.Text = "woman";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
@@ -328,7 +275,6 @@
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(45, 17);
             this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
             this.radioButton4.Text = "man";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
@@ -347,6 +293,68 @@
             this.DescriptionText.Name = "DescriptionText";
             this.DescriptionText.Size = new System.Drawing.Size(100, 20);
             this.DescriptionText.TabIndex = 20;
+            // 
+            // clmnRangID
+            // 
+            this.clmnRangID.DataPropertyName = "RangeID";
+            this.clmnRangID.HeaderText = "RangID";
+            this.clmnRangID.Name = "clmnRangID";
+            this.clmnRangID.Visible = false;
+            // 
+            // clmnFromAge
+            // 
+            this.clmnFromAge.DataPropertyName = "FromAge";
+            this.clmnFromAge.HeaderText = "FromAge";
+            this.clmnFromAge.Name = "clmnFromAge";
+            // 
+            // clmnToAge
+            // 
+            this.clmnToAge.DataPropertyName = "ToAge";
+            this.clmnToAge.HeaderText = "ToAge";
+            this.clmnToAge.Name = "clmnToAge";
+            // 
+            // clmnGender
+            // 
+            this.clmnGender.DataPropertyName = "Gender";
+            this.clmnGender.HeaderText = "Gender";
+            this.clmnGender.Name = "clmnGender";
+            // 
+            // clmnFromValue
+            // 
+            this.clmnFromValue.DataPropertyName = "FromValue";
+            this.clmnFromValue.HeaderText = "FromValue";
+            this.clmnFromValue.Name = "clmnFromValue";
+            // 
+            // clmnToValue
+            // 
+            this.clmnToValue.DataPropertyName = "ToValue";
+            this.clmnToValue.HeaderText = "ToValue";
+            this.clmnToValue.Name = "clmnToValue";
+            // 
+            // clmnDescription
+            // 
+            this.clmnDescription.DataPropertyName = "Description";
+            this.clmnDescription.HeaderText = "Description";
+            this.clmnDescription.Name = "clmnDescription";
+            // 
+            // clmnTestID
+            // 
+            this.clmnTestID.DataPropertyName = "TestID";
+            this.clmnTestID.HeaderText = "clmnTestID";
+            this.clmnTestID.Name = "clmnTestID";
+            this.clmnTestID.Visible = false;
+            // 
+            // clmnTestName
+            // 
+            this.clmnTestName.DataPropertyName = "TestName";
+            this.clmnTestName.HeaderText = "TestName";
+            this.clmnTestName.Name = "clmnTestName";
+            // 
+            // clmnHazard
+            // 
+            this.clmnHazard.DataPropertyName = "Hazard";
+            this.clmnHazard.HeaderText = "Hazard";
+            this.clmnHazard.Name = "clmnHazard";
             // 
             // TestRangeForm
             // 
@@ -406,6 +414,12 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridRange;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox DescriptionText;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnRangID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnFromAge;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnToAge;
@@ -416,11 +430,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTestID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTestName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnHazard;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox DescriptionText;
     }
 }
