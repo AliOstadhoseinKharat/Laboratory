@@ -80,6 +80,7 @@ namespace Laboratory2
             BindGrid();
             BindTests();
             goToAddMode();
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -105,6 +106,34 @@ namespace Laboratory2
             testRangeRepo.Add(range);
             clearForm();
             BindGrid();
+        }
+
+        private void dataGridRange_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.rangeId = Convert.ToInt32(dataGridRange.Rows[e.RowIndex].Cells[0].Value);
+            if (e.ColumnIndex == 10)
+            {
+                var testRange = testRangeRepo.Get(rangeId);
+                goToEditMode();
+                if (testRange.Gender == 0) radioButton3.Checked = true; else radioButton4.Checked = true;
+                if(testRange.Hazard != null && testRange.Hazard == true) radioButton1.Checked = true; else radioButton2.Checked = true;
+                var testRepo = new TestRepository();
+                var currentTest = testRepo.Get(testRange.TestID);
+                cmbTest.SelectedText = currentTest.TestName;
+                cmbTest.SelectedValue = currentTest.TestID;
+                fromValurText.Text = testRange.FromValue.ToString();
+                toValueText.Text = testRange.ToValue.ToString();
+                DescriptionText.Text = testRange.Description;
+                FromAgeText.Text = testRange.FromAge.ToString();
+                toAgeText.Text = testRange.ToAge.ToString();
+            }
+
+
+            if (e.ColumnIndex == 11)
+            {
+                // TODO 
+            }
+
         }
     }
 }

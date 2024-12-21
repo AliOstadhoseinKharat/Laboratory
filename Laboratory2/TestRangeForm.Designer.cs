@@ -62,6 +62,8 @@
             this.clmnTestID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnTestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnHazard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRange)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -136,10 +138,10 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(98, 20);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.Size = new System.Drawing.Size(60, 17);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.Text = "has not";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -147,10 +149,10 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(7, 20);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.Size = new System.Drawing.Size(42, 17);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.Text = "has";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -231,12 +233,15 @@
             this.clmnDescription,
             this.clmnTestID,
             this.clmnTestName,
-            this.clmnHazard});
+            this.clmnHazard,
+            this.clmnEdit,
+            this.clmnDelete});
             this.dataGridRange.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridRange.Location = new System.Drawing.Point(0, 297);
             this.dataGridRange.Name = "dataGridRange";
-            this.dataGridRange.Size = new System.Drawing.Size(944, 153);
+            this.dataGridRange.Size = new System.Drawing.Size(1124, 153);
             this.dataGridRange.TabIndex = 16;
+            this.dataGridRange.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRange_CellContentClick);
             // 
             // label7
             // 
@@ -356,11 +361,21 @@
             this.clmnHazard.HeaderText = "Hazard";
             this.clmnHazard.Name = "clmnHazard";
             // 
+            // clmnEdit
+            // 
+            this.clmnEdit.HeaderText = "Edit";
+            this.clmnEdit.Name = "clmnEdit";
+            // 
+            // clmnDelete
+            // 
+            this.clmnDelete.HeaderText = "Delete";
+            this.clmnDelete.Name = "clmnDelete";
+            // 
             // TestRangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 450);
+            this.ClientSize = new System.Drawing.Size(1124, 450);
             this.Controls.Add(this.DescriptionText);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox2);
@@ -430,5 +445,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTestID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTestName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnHazard;
+        private System.Windows.Forms.DataGridViewButtonColumn clmnEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn clmnDelete;
     }
 }
