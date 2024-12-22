@@ -116,7 +116,7 @@ namespace Laboratory2
                 var testRange = testRangeRepo.Get(rangeId);
                 goToEditMode();
                 if (testRange.Gender == 0) radioButton3.Checked = true; else radioButton4.Checked = true;
-                if(testRange.Hazard != null && testRange.Hazard == true) radioButton1.Checked = true; else radioButton2.Checked = true;
+                if (testRange.Hazard != null && testRange.Hazard == true) radioButton1.Checked = true; else radioButton2.Checked = true;
                 var testRepo = new TestRepository();
                 var currentTest = testRepo.Get(testRange.TestID);
                 cmbTest.SelectedText = currentTest.TestName;
@@ -131,7 +131,13 @@ namespace Laboratory2
 
             if (e.ColumnIndex == 11)
             {
-                // TODO 
+                int testRangeId = Convert.ToInt32(dataGridRange.Rows[e.RowIndex].Cells[0].Value);
+                if (MessageBox.Show("Are you Sure ?", "alert", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    bool result = testRangeRepo.Remove(testRangeId);
+                    if (result == true) { BindGrid(); }
+                    else { MessageBox.Show("Delete Failed"); }
+                }
             }
 
         }
