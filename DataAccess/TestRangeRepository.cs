@@ -1,5 +1,6 @@
 ﻿using DataAccess.services;
 using DomainModel.Models;
+using DomainModel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace DataAccess
         {
             return dbContext.TestRanges.ToList();
         }
+
 
         public bool Remove(int testRanxID)
         {
@@ -65,6 +67,24 @@ namespace DataAccess
             {
                 return false;
             }
+        }
+
+        public List<TestRangeViewModel> GetTestRanges()
+        {
+            return dbContext.TestRanges
+
+             .Select(tr => new TestRangeViewModel
+             {
+                 FromAge = tr.FromAge,
+                 ToAge = tr.ToAge,
+                 Gender = tr.Gender,
+                 FromValue = tr.FromValue,
+                 ToValue = tr.ToValue,
+                 Description = tr.Description,
+                 TestName = tr.Test.TestName ?? "N/A",
+                 Hazard = tr.Hazard
+             })
+             .ToList();
         }
     }
 }

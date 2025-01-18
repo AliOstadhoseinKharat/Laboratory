@@ -37,7 +37,7 @@ namespace Laboratory2
                         {
                             RadioButton radio = (RadioButton)childControl;
                             Console.WriteLine("Unchecking: " + radio.Name);
-                            radio.Checked = false; 
+                            radio.Checked = false;
                         }
                     }
                 }
@@ -76,7 +76,7 @@ namespace Laboratory2
         {
             dataGridRange.AutoGenerateColumns = false;
             dataGridRange.DataSource = null;
-            dataGridRange.DataSource = testRangeRepo.GetAll();
+            dataGridRange.DataSource = testRangeRepo.GetTestRanges();
         }
 
 
@@ -182,7 +182,8 @@ namespace Laboratory2
             bool hazard = hazardValue ? true : false;
 
             int testID = Convert.ToInt32(cmbTest.SelectedValue);
-            TestRanx testRange  = new TestRanx {
+            TestRanx testRange = new TestRanx
+            {
                 RangeID = rangeId,
                 FromAge = Convert.ToInt32(FromAgeText.Text),
                 ToAge = Convert.ToInt32(toAgeText.Text),

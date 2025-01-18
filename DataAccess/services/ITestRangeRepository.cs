@@ -1,15 +1,16 @@
-﻿using System;
+﻿using DomainModel.Models;
+using DomainModel.ViewModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DomainModel.Models;
+
 
 namespace DataAccess.services
 {
     interface ITestRangeRepository
     {
         List<TestRanx> GetAll();
+
+        List<TestRangeViewModel> GetTestRanges();
+
         TestRanx Get(int testRanxID);
         int Add(TestRanx testRanx);
         bool Remove(int testRanxID);
