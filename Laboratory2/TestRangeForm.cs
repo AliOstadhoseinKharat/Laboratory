@@ -13,11 +13,36 @@ namespace Laboratory2
         #region Helper Methods
         private void clearForm()
         {
-            fromValurText.Text = " ";
-            toValueText.Text = " ";
-            FromAgeText.Text = " ";
-            toAgeText.Text = " ";
-            cmbTest.Text = " ";
+            foreach (System.Windows.Forms.Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    var txt = (TextBox)control;
+                    txt.Text = "";
+                }
+
+                if (control is ComboBox)
+                {
+                    var comboBox = (ComboBox)control;
+                    comboBox.SelectedIndex = -1;
+                }
+
+
+
+                if (control.HasChildren)
+                {
+                    foreach (Control childControl in control.Controls)
+                    {
+                        if (childControl is RadioButton)
+                        {
+                            RadioButton radio = (RadioButton)childControl;
+                            Console.WriteLine("Unchecking: " + radio.Name);
+                            radio.Checked = false; 
+                        }
+                    }
+                }
+            }
+            this.Refresh();
         }
         private void BindTestCategories()
         {
@@ -139,6 +164,41 @@ namespace Laboratory2
                     else { MessageBox.Show("Delete Failed"); }
                 }
             }
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            clearForm();
+            goToAddMode();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            bool genderValue = radioButton3.Checked;
+            int gender = genderValue ? 0 : 1;
+
+            bool hazardValue = radioButton1.Checked;
+            bool hazard = hazardValue ? true : false;
+
+            int testID = Convert.ToInt32(cmbTest.SelectedValue);
+            TestRanx testRange  = new TestRanx {
+                RangeID = rangeId,
+                FromAge = Convert.ToInt32(FromAgeText.Text),
+                ToAge = Convert.ToInt32(toAgeText.Text),
+                FromValue = Convert.ToInt32(fromValurText.Text),
+                ToValue = Convert.ToInt32(toValueText.Text),
+                TestID = testID,
+                Gender = gender,
+
+                Hazard = hazard,
+                Description = DescriptionText.Text
+            };
+
+            testRangeRepo.Update(testRange);
+            BindGrid();
+            clearForm();
+            goToAddMode();
 
         }
     }
