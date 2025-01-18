@@ -1,5 +1,6 @@
 ﻿using DataAccess.services;
 using DomainModel.Models;
+using DomainModel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,19 @@ namespace DataAccess
         public List<Test> GetAll()
         {
             return dbContext.Tests.OrderByDescending(item => item.TestID).ToList();
+        }
+
+        public List<TestViewModel> GetAllCustomTests()
+        {
+            return dbContext.Tests.Select(item => new TestViewModel
+            {
+                TestName = item.TestName,
+                UnitName = item.Unit.UnitName ?? "",
+                AgeHasEffect = item.AgeHasEffect,
+                GenderHasEffect = item.GenderHasEffect,
+                CategoryName = item.TestCategory.CategoryName ?? "",
+                Price = item.Price
+            }).ToList();
         }
 
         public bool Remove(int testID)

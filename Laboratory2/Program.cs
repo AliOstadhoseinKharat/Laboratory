@@ -16,7 +16,7 @@ namespace Laboratory2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TestRangeForm());
+            Application.Run(new Test());
         }
     }
 }
