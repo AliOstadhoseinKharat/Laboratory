@@ -36,7 +36,6 @@ namespace Laboratory2
                         if (childControl is RadioButton)
                         {
                             RadioButton radio = (RadioButton)childControl;
-                            Console.WriteLine("Unchecking: " + radio.Name);
                             radio.Checked = false;
                         }
                     }
@@ -136,6 +135,7 @@ namespace Laboratory2
         private void dataGridRange_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.rangeId = Convert.ToInt32(dataGridRange.Rows[e.RowIndex].Cells[0].Value);
+            
             if (e.ColumnIndex == 10)
             {
                 var testRange = testRangeRepo.Get(rangeId);

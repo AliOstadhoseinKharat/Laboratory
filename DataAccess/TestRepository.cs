@@ -9,7 +9,6 @@ namespace DataAccess
 {
     public class TestRepository : ITestRepository
     {
-
         private LabotatoryContext2 dbContext = new LabotatoryContext2();
         public int Add(Test test)
         {
@@ -32,6 +31,7 @@ namespace DataAccess
         {
             return dbContext.Tests.Select(item => new TestViewModel
             {
+                TestID = item.TestID,
                 TestName = item.TestName,
                 UnitName = item.Unit.UnitName ?? "",
                 AgeHasEffect = item.AgeHasEffect,
@@ -51,7 +51,7 @@ namespace DataAccess
                 dbContext.SaveChanges();
                 result = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 result = false;
             }

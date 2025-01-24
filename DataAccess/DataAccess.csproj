@@ -59,6 +59,7 @@
     <Compile Include="TestCategoryRepository.cs" />
     <Compile Include="TestRangeRepository.cs" />
     <Compile Include="TestRepository.cs" />
+    <Compile Include="UnitRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
