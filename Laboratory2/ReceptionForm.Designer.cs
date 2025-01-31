@@ -1,6 +1,6 @@
 ﻿namespace Laboratory2
 {
-    partial class Reception
+    partial class ReceptionForm
     {
         /// <summary>
         /// Required designer variable.

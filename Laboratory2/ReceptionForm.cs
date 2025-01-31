@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Laboratory2
 {
-    public partial class Reception : Form
+    public partial class ReceptionForm : Form
     {
-        public Reception()
+        public ReceptionForm()
         {
             InitializeComponent();
         }
