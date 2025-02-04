@@ -1,8 +1,4 @@
-﻿using DomainModel.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Laboratory2
@@ -17,7 +13,7 @@ namespace Laboratory2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReceptionForm());
+            Application.Run(new EmployeeForm());
         }
     }
 }
