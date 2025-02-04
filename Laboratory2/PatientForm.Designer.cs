@@ -33,24 +33,30 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblMobile = new System.Windows.Forms.Label();
             this.txtMobile = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.lblNationalCode = new System.Windows.Forms.Label();
+            this.txtNationalCode = new System.Windows.Forms.TextBox();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.dataGridEmployee = new System.Windows.Forms.DataGridView();
-            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridPatient = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioFemaleGender = new System.Windows.Forms.RadioButton();
+            this.radioMaleGender = new System.Windows.Forms.RadioButton();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.PatientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NationalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPatient)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEdit
@@ -61,6 +67,7 @@
             this.btnEdit.TabIndex = 31;
             this.btnEdit.Text = "Update";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnCancel
             // 
@@ -70,6 +77,7 @@
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
@@ -79,6 +87,7 @@
             this.btnAdd.TabIndex = 29;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblMobile
             // 
@@ -96,37 +105,37 @@
             this.txtMobile.Size = new System.Drawing.Size(138, 20);
             this.txtMobile.TabIndex = 27;
             // 
-            // lblPassword
+            // lblNationalCode
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(21, 98);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(59, 13);
-            this.lblPassword.TabIndex = 26;
-            this.lblPassword.Text = "Password :";
+            this.lblNationalCode.AutoSize = true;
+            this.lblNationalCode.Location = new System.Drawing.Point(21, 98);
+            this.lblNationalCode.Name = "lblNationalCode";
+            this.lblNationalCode.Size = new System.Drawing.Size(80, 13);
+            this.lblNationalCode.TabIndex = 26;
+            this.lblNationalCode.Text = "National Code :";
             // 
-            // txtPassword
+            // txtNationalCode
             // 
-            this.txtPassword.Location = new System.Drawing.Point(91, 95);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(138, 20);
-            this.txtPassword.TabIndex = 25;
+            this.txtNationalCode.Location = new System.Drawing.Point(107, 95);
+            this.txtNationalCode.Name = "txtNationalCode";
+            this.txtNationalCode.Size = new System.Drawing.Size(138, 20);
+            this.txtNationalCode.TabIndex = 25;
             // 
-            // lblUserName
+            // lblAddress
             // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(553, 49);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(63, 13);
-            this.lblUserName.TabIndex = 24;
-            this.lblUserName.Text = "UserName :";
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(553, 49);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(51, 13);
+            this.lblAddress.TabIndex = 24;
+            this.lblAddress.Text = "Address :";
             // 
-            // txtUserName
+            // txtAddress
             // 
-            this.txtUserName.Location = new System.Drawing.Point(622, 46);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(138, 20);
-            this.txtUserName.TabIndex = 23;
+            this.txtAddress.Location = new System.Drawing.Point(622, 46);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(138, 20);
+            this.txtAddress.TabIndex = 23;
             // 
             // lblLastName
             // 
@@ -147,7 +156,7 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(21, 50);
+            this.lblFirstName.Location = new System.Drawing.Point(21, 49);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(60, 13);
             this.lblFirstName.TabIndex = 20;
@@ -155,35 +164,78 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(91, 47);
+            this.txtFirstName.Location = new System.Drawing.Point(107, 46);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(138, 20);
             this.txtFirstName.TabIndex = 19;
             // 
-            // dataGridEmployee
+            // dataGridPatient
             // 
-            this.dataGridEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EmployeeID,
+            this.dataGridPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPatient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PatientID,
             this.FirstName,
             this.LastName,
-            this.Password,
-            this.UserName,
+            this.Address,
+            this.NationalCode,
             this.Mobile,
+            this.Gender,
             this.Edit,
             this.Delete});
-            this.dataGridEmployee.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridEmployee.Location = new System.Drawing.Point(0, 295);
-            this.dataGridEmployee.Name = "dataGridEmployee";
-            this.dataGridEmployee.Size = new System.Drawing.Size(919, 155);
-            this.dataGridEmployee.TabIndex = 32;
+            this.dataGridPatient.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridPatient.Location = new System.Drawing.Point(0, 295);
+            this.dataGridPatient.Name = "dataGridPatient";
+            this.dataGridPatient.Size = new System.Drawing.Size(942, 155);
+            this.dataGridPatient.TabIndex = 32;
+            this.dataGridPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPatient_CellContentClick);
             // 
-            // EmployeeID
+            // groupBox2
             // 
-            this.EmployeeID.DataPropertyName = "EmployeeID";
-            this.EmployeeID.HeaderText = "EmployeeID";
-            this.EmployeeID.Name = "EmployeeID";
-            this.EmployeeID.Visible = false;
+            this.groupBox2.Controls.Add(this.radioFemaleGender);
+            this.groupBox2.Controls.Add(this.radioMaleGender);
+            this.groupBox2.Location = new System.Drawing.Point(622, 91);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(249, 42);
+            this.groupBox2.TabIndex = 34;
+            this.groupBox2.TabStop = false;
+            // 
+            // radioFemaleGender
+            // 
+            this.radioFemaleGender.AutoSize = true;
+            this.radioFemaleGender.Location = new System.Drawing.Point(136, 20);
+            this.radioFemaleGender.Name = "radioFemaleGender";
+            this.radioFemaleGender.Size = new System.Drawing.Size(59, 17);
+            this.radioFemaleGender.TabIndex = 1;
+            this.radioFemaleGender.TabStop = true;
+            this.radioFemaleGender.Text = "Female";
+            this.radioFemaleGender.UseVisualStyleBackColor = true;
+            // 
+            // radioMaleGender
+            // 
+            this.radioMaleGender.AutoSize = true;
+            this.radioMaleGender.Location = new System.Drawing.Point(7, 20);
+            this.radioMaleGender.Name = "radioMaleGender";
+            this.radioMaleGender.Size = new System.Drawing.Size(48, 17);
+            this.radioMaleGender.TabIndex = 0;
+            this.radioMaleGender.TabStop = true;
+            this.radioMaleGender.Text = "Male";
+            this.radioMaleGender.UseVisualStyleBackColor = true;
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Location = new System.Drawing.Point(553, 102);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(48, 13);
+            this.lblGender.TabIndex = 33;
+            this.lblGender.Text = "Gender :";
+            // 
+            // PatientID
+            // 
+            this.PatientID.DataPropertyName = "PatientID";
+            this.PatientID.HeaderText = "PatientID";
+            this.PatientID.Name = "PatientID";
+            this.PatientID.Visible = false;
             // 
             // FirstName
             // 
@@ -197,23 +249,29 @@
             this.LastName.HeaderText = "LastName";
             this.LastName.Name = "LastName";
             // 
-            // Password
+            // Address
             // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
             // 
-            // UserName
+            // NationalCode
             // 
-            this.UserName.DataPropertyName = "UserName";
-            this.UserName.HeaderText = "UserName";
-            this.UserName.Name = "UserName";
+            this.NationalCode.DataPropertyName = "NationalCode";
+            this.NationalCode.HeaderText = "NationalCode";
+            this.NationalCode.Name = "NationalCode";
             // 
             // Mobile
             // 
             this.Mobile.DataPropertyName = "Mobile";
             this.Mobile.HeaderText = "Mobile";
             this.Mobile.Name = "Mobile";
+            // 
+            // Gender
+            // 
+            this.Gender.DataPropertyName = "Gender";
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
             // 
             // Edit
             // 
@@ -235,24 +293,29 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 450);
-            this.Controls.Add(this.dataGridEmployee);
+            this.ClientSize = new System.Drawing.Size(942, 450);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.lblGender);
+            this.Controls.Add(this.dataGridPatient);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblMobile);
             this.Controls.Add(this.txtMobile);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblUserName);
-            this.Controls.Add(this.txtUserName);
+            this.Controls.Add(this.lblNationalCode);
+            this.Controls.Add(this.txtNationalCode);
+            this.Controls.Add(this.lblAddress);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.txtFirstName);
             this.Name = "PatientForm";
             this.Text = "PatientForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).EndInit();
+            this.Load += new System.EventHandler(this.PatientForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPatient)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,21 +328,26 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblMobile;
         private System.Windows.Forms.TextBox txtMobile;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.Label lblNationalCode;
+        private System.Windows.Forms.TextBox txtNationalCode;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.DataGridView dataGridEmployee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
+        private System.Windows.Forms.DataGridView dataGridPatient;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioFemaleGender;
+        private System.Windows.Forms.RadioButton radioMaleGender;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PatientID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NationalCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
