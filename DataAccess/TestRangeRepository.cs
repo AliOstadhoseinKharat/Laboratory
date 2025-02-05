@@ -75,6 +75,7 @@ namespace DataAccess
 
              .Select(tr => new TestRangeViewModel
              {
+                 RangeID = tr.RangeID,
                  FromAge = tr.FromAge,
                  ToAge = tr.ToAge,
                  Gender = tr.Gender,

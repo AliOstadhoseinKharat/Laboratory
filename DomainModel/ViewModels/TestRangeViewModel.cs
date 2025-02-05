@@ -2,6 +2,7 @@
 {
     public class TestRangeViewModel
     {
+        public int RangeID { get; set; }
         public int? FromAge { get; set; }
         public int? ToAge { get; set; }
         public int? Gender { get; set; }

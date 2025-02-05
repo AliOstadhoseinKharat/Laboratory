@@ -59,7 +59,7 @@ namespace Laboratory2
         {
             dataGridPatient.AutoGenerateColumns = false;
             dataGridPatient.DataSource = null;
-            dataGridPatient.DataSource = _patientRepository.GetAll();
+            dataGridPatient.DataSource = _patientRepository.GetAllPatients();
         }
 
 
@@ -138,21 +138,26 @@ namespace Laboratory2
             if (e.ColumnIndex == 7)
             {
                 var patient = _patientRepository.Get(_patientID);
-                goToEditMode();
-                txtFirstName.Text = patient.FirstName;
-                txtLastName.Text = patient.LastName;
-                txtAddress.Text = patient.Address;
-                txtMobile.Text = patient.Mobile;
-                txtNationalCode.Text = patient.NationalCode;
-                if (patient.Gender == true)
+
+                if (patient != null)
                 {
-                    radioMaleGender.Checked = true;
-                    radioFemaleGender.Checked = false;
-                }
-                else
-                {
-                    radioFemaleGender.Checked = true;
-                    radioMaleGender.Checked = false;
+                    goToEditMode();
+                    txtFirstName.Text = patient.FirstName;
+                    txtLastName.Text = patient.LastName;
+                    txtAddress.Text = patient.Address;
+                    txtMobile.Text = patient.Mobile;
+                    txtNationalCode.Text = patient.NationalCode;
+                    if (patient.Gender == true)
+                    {
+                        radioMaleGender.Checked = true;
+                        radioFemaleGender.Checked = false;
+                    }
+                    else
+                    {
+                        radioFemaleGender.Checked = true;
+                        radioMaleGender.Checked = false;
+                    }
+
                 }
 
             }

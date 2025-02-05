@@ -1,5 +1,6 @@
 ﻿using DataAccess.services;
 using DomainModel.Models;
+using DomainModel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,21 @@ namespace DataAccess
         public List<Patient> GetAll()
         {
             return dbContext.Patients.OrderByDescending(item => item.PatientID).ToList();
+        }
+
+        public List<PatientViewModel> GetAllPatients()
+        {
+            return dbContext.Patients.Select(item => new PatientViewModel
+            {
+                PatientID = item.PatientID,
+                FirstName = item.FirstName,
+                LastName = item.LastName,
+                Address = item.Address,
+                Mobile = item.Mobile,
+                NationalCode = item.NationalCode,
+                Gender = item.Gender == true ? "Male" : "Female",
+            }
+            ).ToList();
         }
 
         public bool Remove(int patientID)
