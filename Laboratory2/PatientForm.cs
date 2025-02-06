@@ -6,8 +6,8 @@ using System.Windows.Forms;
 namespace Laboratory2
 {
 
-    //  TODO ViewModel for Gender
-    //  Checked Null in add new patient
+   
+    //  TODO Checked Null in add new patient
     public partial class PatientForm : Form
     {
         private PatientRepository _patientRepository = new PatientRepository();

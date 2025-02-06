@@ -54,10 +54,12 @@
     <Compile Include="EmployeeRepository.cs" />
     <Compile Include="InsuranceTypeRepository.cs" />
     <Compile Include="PatientRepository.cs" />
+    <Compile Include="PatientTestHeaderRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="services\IBaseRepository.cs" />
     <Compile Include="services\IEmployeeRepository.cs" />
     <Compile Include="services\IInsuranceTypeRepository.cs" />
+    <Compile Include="services\IPatientTestHeaderRepository.cs" />
     <Compile Include="services\IPatientRepository.cs" />
     <Compile Include="services\ITestCategoryRepository.cs" />
     <Compile Include="services\ITestRangeRepository.cs" />

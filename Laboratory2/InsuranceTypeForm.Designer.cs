@@ -173,7 +173,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInsuranceType);
             this.Name = "InsuranceTypeForm";
-            this.Text = "Form1";
+            this.Text = "Insurance Type Form";
             this.Load += new System.EventHandler(this.InsuranceTypeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.insuranceGrid)).EndInit();
             this.ResumeLayout(false);
