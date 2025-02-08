@@ -35,6 +35,7 @@ namespace DataAccess
                 PatientID = item.PatientID,
                 FirstName = item.FirstName,
                 LastName = item.LastName,
+                FullName = (item.FirstName ?? "") + " " + (item.LastName ?? ""),
                 Address = item.Address,
                 Mobile = item.Mobile,
                 NationalCode = item.NationalCode,

@@ -1,5 +1,6 @@
 ﻿using DataAccess.services;
 using DomainModel.Models;
+using DomainModel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,25 @@ namespace DataAccess
         public List<PatientHeader> GetAll()
         {
             return _dbContext.PatientHeaders.OrderByDescending(item => item.PatientTestHeaderID).ToList();
+        }
+
+        public List<ReceptionViewModel> GetAllReceptions()
+        {
+            return _dbContext.PatientHeaders.Select((item) => new ReceptionViewModel
+            {
+                PatientTestHeaderID = item.PatientTestHeaderID,
+                PatientTestHeaderName = (item.Patient.FirstName ?? "") + " " + (item.Patient.LastName ?? "") + " " + item.HeaderDate,
+                HeaderDate = item.HeaderDate,
+                PatientID = item.PatientID,
+                PatientName = (item.Patient.FirstName ?? "") + " " + (item.Patient.LastName ?? ""),
+                EmployeeID = item.EmployeeID,
+                EmployeeName = (item.Employee.FirstName ?? "") + " " + (item.Employee.LastName ?? ""),
+                InsuranceTypeID = (int)item.InsuranceTypeID,
+                InsuranceTypeName = item.InsuranceType.InsuranceTypeName ?? "N/A",
+                DrName = item.DrName,
+                Age = item.Age,
+                TotalPrice = (long)(item.PatientTestDetails.Any() ? item.PatientTestDetails.Sum(itemDetail => itemDetail.Price) : 0)
+            }).ToList();
         }
 
         public bool Remove(int ID)
@@ -64,7 +84,6 @@ namespace DataAccess
                     _dbContext.SaveChanges();
 
                     result = true;
-
                 }
                 else
                 {

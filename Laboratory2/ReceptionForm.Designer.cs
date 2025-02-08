@@ -29,30 +29,35 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.groupBox1.SuspendLayout();
+            this.insuranceTypeCombo = new System.Windows.Forms.ComboBox();
+            this.headerDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.txtDrName = new System.Windows.Forms.TextBox();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.patientCombo = new System.Windows.Forms.ComboBox();
+            this.employeeCombo = new System.Windows.Forms.ComboBox();
+            this.receptionDataGrid = new System.Windows.Forms.DataGridView();
+            this.PatientTestHeaderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeaderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PatientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PatientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InsuranceTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InsuranceTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DrName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.receptionDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,19 +69,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Date:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(427, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Total Price:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 373);
+            this.label4.Location = new System.Drawing.Point(31, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 3;
@@ -85,30 +81,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 320);
+            this.label5.Location = new System.Drawing.Point(31, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Doctor Name:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(214, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Price:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Test:";
             // 
             // label8
             // 
@@ -137,154 +114,215 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "Employee:";
             // 
-            // comboBox1
+            // insuranceTypeCombo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(223, 150);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 10;
+            this.insuranceTypeCombo.FormattingEnabled = true;
+            this.insuranceTypeCombo.Location = new System.Drawing.Point(223, 150);
+            this.insuranceTypeCombo.Name = "insuranceTypeCombo";
+            this.insuranceTypeCombo.Size = new System.Drawing.Size(200, 21);
+            this.insuranceTypeCombo.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // headerDatePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(223, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.headerDatePicker.Location = new System.Drawing.Point(223, 22);
+            this.headerDatePicker.Name = "headerDatePicker";
+            this.headerDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.headerDatePicker.TabIndex = 11;
             // 
-            // comboBox2
+            // txtAge
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(67, 22);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 12;
+            this.txtAge.Location = new System.Drawing.Point(223, 241);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(200, 20);
+            this.txtAge.TabIndex = 14;
             // 
-            // textBox2
+            // txtDrName
             // 
-            this.textBox2.Location = new System.Drawing.Point(233, 356);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 14;
+            this.txtDrName.Location = new System.Drawing.Point(223, 198);
+            this.txtDrName.Name = "txtDrName";
+            this.txtDrName.Size = new System.Drawing.Size(200, 20);
+            this.txtDrName.TabIndex = 15;
             // 
-            // textBox3
+            // btnEdit
             // 
-            this.textBox3.Location = new System.Drawing.Point(233, 313);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 15;
+            this.btnEdit.Location = new System.Drawing.Point(471, 69);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 21;
+            this.btnEdit.Text = "Update";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // groupBox1
+            // btnCancel
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(36, 249);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(582, 58);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.btnCancel.Location = new System.Drawing.Point(471, 106);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(303, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(471, 25);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 18;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.button8_Click);
             // 
-            // label11
+            // patientCombo
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(512, 24);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "label11";
+            this.patientCombo.FormattingEnabled = true;
+            this.patientCombo.Location = new System.Drawing.Point(223, 66);
+            this.patientCombo.Name = "patientCombo";
+            this.patientCombo.Size = new System.Drawing.Size(200, 21);
+            this.patientCombo.TabIndex = 22;
             // 
-            // label2
+            // employeeCombo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(262, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "label2";
+            this.employeeCombo.FormattingEnabled = true;
+            this.employeeCombo.Location = new System.Drawing.Point(223, 105);
+            this.employeeCombo.Name = "employeeCombo";
+            this.employeeCombo.Size = new System.Drawing.Size(200, 21);
+            this.employeeCombo.TabIndex = 23;
             // 
-            // button5
+            // receptionDataGrid
             // 
-            this.button5.Location = new System.Drawing.Point(611, 73);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "Update";
-            this.button5.UseVisualStyleBackColor = true;
+            this.receptionDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.receptionDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PatientTestHeaderID,
+            this.HeaderDate,
+            this.PatientID,
+            this.PatientName,
+            this.EmployeeID,
+            this.EmployeeName,
+            this.InsuranceTypeID,
+            this.InsuranceTypeName,
+            this.DrName,
+            this.TotalPrice,
+            this.Age,
+            this.Edit,
+            this.Delete});
+            this.receptionDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.receptionDataGrid.Location = new System.Drawing.Point(0, 477);
+            this.receptionDataGrid.Name = "receptionDataGrid";
+            this.receptionDataGrid.Size = new System.Drawing.Size(1002, 226);
+            this.receptionDataGrid.TabIndex = 24;
+            this.receptionDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.receptionDataGrid_CellContentClick);
             // 
-            // button6
+            // PatientTestHeaderID
             // 
-            this.button6.Location = new System.Drawing.Point(611, 123);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "Delete";
-            this.button6.UseVisualStyleBackColor = true;
+            this.PatientTestHeaderID.DataPropertyName = "PatientTestHeaderID";
+            this.PatientTestHeaderID.HeaderText = "PatientTestHeaderID";
+            this.PatientTestHeaderID.Name = "PatientTestHeaderID";
+            this.PatientTestHeaderID.Visible = false;
             // 
-            // button7
+            // HeaderDate
             // 
-            this.button7.Location = new System.Drawing.Point(611, 178);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "Cancel";
-            this.button7.UseVisualStyleBackColor = true;
+            this.HeaderDate.DataPropertyName = "HeaderDate";
+            this.HeaderDate.HeaderText = "HeaderDate";
+            this.HeaderDate.Name = "HeaderDate";
+            this.HeaderDate.ToolTipText = "HeaderDate";
             // 
-            // button8
+            // PatientID
             // 
-            this.button8.Location = new System.Drawing.Point(611, 29);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 18;
-            this.button8.Text = "Add";
-            this.button8.UseVisualStyleBackColor = true;
+            this.PatientID.DataPropertyName = "PatientID";
+            this.PatientID.HeaderText = "PatientID";
+            this.PatientID.Name = "PatientID";
+            this.PatientID.Visible = false;
             // 
-            // comboBox3
+            // PatientName
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(223, 66);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 22;
+            this.PatientName.DataPropertyName = "PatientName";
+            this.PatientName.HeaderText = "PatientName";
+            this.PatientName.Name = "PatientName";
+            this.PatientName.ToolTipText = "PatientName";
             // 
-            // comboBox4
+            // EmployeeID
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(223, 105);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 23;
+            this.EmployeeID.DataPropertyName = "EmployeeID";
+            this.EmployeeID.HeaderText = "EmployeeID";
+            this.EmployeeID.Name = "EmployeeID";
+            this.EmployeeID.Visible = false;
+            // 
+            // EmployeeName
+            // 
+            this.EmployeeName.DataPropertyName = "EmployeeName";
+            this.EmployeeName.HeaderText = "EmployeeName";
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.ToolTipText = "EmployeeName";
+            // 
+            // InsuranceTypeID
+            // 
+            this.InsuranceTypeID.DataPropertyName = "InsuranceTypeID";
+            this.InsuranceTypeID.HeaderText = "InsuranceTypeID";
+            this.InsuranceTypeID.Name = "InsuranceTypeID";
+            this.InsuranceTypeID.Visible = false;
+            // 
+            // InsuranceTypeName
+            // 
+            this.InsuranceTypeName.DataPropertyName = "InsuranceTypeName";
+            this.InsuranceTypeName.HeaderText = "InsuranceTypeName";
+            this.InsuranceTypeName.Name = "InsuranceTypeName";
+            this.InsuranceTypeName.ToolTipText = "InsuranceTypeName";
+            // 
+            // DrName
+            // 
+            this.DrName.DataPropertyName = "DrName";
+            this.DrName.HeaderText = "DrName";
+            this.DrName.Name = "DrName";
+            this.DrName.ToolTipText = "DrName";
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.DataPropertyName = "TotalPrice";
+            this.TotalPrice.HeaderText = "TotalPrice";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ToolTipText = "TotalPrice";
+            // 
+            // Age
+            // 
+            this.Age.DataPropertyName = "Age";
+            this.Age.HeaderText = "Age";
+            this.Age.Name = "Age";
+            this.Age.ToolTipText = "Age";
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Edit";
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.ToolTipText = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.ToolTipText = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // ReceptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 429);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(1002, 703);
+            this.Controls.Add(this.receptionDataGrid);
+            this.Controls.Add(this.employeeCombo);
+            this.Controls.Add(this.patientCombo);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtDrName);
+            this.Controls.Add(this.txtAge);
+            this.Controls.Add(this.headerDatePicker);
+            this.Controls.Add(this.insuranceTypeCombo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -293,8 +331,8 @@
             this.Controls.Add(this.label1);
             this.Name = "ReceptionForm";
             this.Text = "Reception";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.ReceptionForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.receptionDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,28 +341,33 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox insuranceTypeCombo;
+        private System.Windows.Forms.DateTimePicker headerDatePicker;
+        private System.Windows.Forms.TextBox txtAge;
+        private System.Windows.Forms.TextBox txtDrName;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ComboBox patientCombo;
+        private System.Windows.Forms.ComboBox employeeCombo;
+        private System.Windows.Forms.DataGridView receptionDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PatientTestHeaderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeaderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PatientID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PatientName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InsuranceTypeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InsuranceTypeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DrName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

@@ -1,13 +1,13 @@
 ﻿using DomainModel.Models;
-using System;
+using DomainModel.ViewModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.services
 {
-    public interface IPatientTestHeaderRepository : IBaseRepository<PatientHeader , int>
+    public interface IPatientTestHeaderRepository : IBaseRepository<PatientHeader, int>
     {
+
+
+        List<ReceptionViewModel> GetAllReceptions();
     }
 }

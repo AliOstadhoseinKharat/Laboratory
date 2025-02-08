@@ -1,5 +1,6 @@
 ﻿using DataAccess.services;
 using DomainModel.Models;
+using DomainModel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,24 @@ namespace DataAccess
         public List<Employee> GetAll()
         {
             return _context.Employees.OrderByDescending(item => item.EmployeeID).ToList();
+        }
+
+        public List<EmployeeViewModel> GetAllEmployee()
+        {
+            List<EmployeeViewModel> employeeViews =
+                _context.Employees.Select(item => new EmployeeViewModel
+                {
+                    EmployeeID = item.EmployeeID,
+                    FirstName = item.FirstName,
+                    LastName = item.LastName,
+                    FullName = (item.FirstName ?? "") + " " + (item.LastName ?? ""),
+                    UserName = item.UserName,
+                    Password = item.Password,
+                    Mobile = item.Mobile,
+
+                }).ToList();
+
+            return employeeViews;
         }
 
         public bool Remove(int employeeID)

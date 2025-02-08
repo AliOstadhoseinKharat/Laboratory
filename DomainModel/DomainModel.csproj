@@ -65,7 +65,10 @@
     <Compile Include="Models\TestRanx.cs" />
     <Compile Include="Models\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="ViewModels\PatientViewModel.cs" />
+    <Compile Include="ViewModels\ReceptionTestViewModel.cs" />
+    <Compile Include="ViewModels\ReceptionViewModel.cs" />
     <Compile Include="ViewModels\TestRangeViewModel.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
   </ItemGroup>

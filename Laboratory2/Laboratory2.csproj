@@ -82,6 +82,12 @@
     <Compile Include="ReceptionForm.Designer.cs">
       <DependentUpon>ReceptionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReceptionTestsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceptionTestsForm.Designer.cs">
+      <DependentUpon>ReceptionTestsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <EmbeddedResource Include="ReceptionForm.resx">
       <DependentUpon>ReceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceptionTestsForm.resx">
+      <DependentUpon>ReceptionTestsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>

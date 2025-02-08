@@ -13,7 +13,7 @@ namespace Laboratory2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PatientForm());
+            Application.Run(new ReceptionForm());
         }
     }
 }
