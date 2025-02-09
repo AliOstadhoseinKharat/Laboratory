@@ -8,5 +8,7 @@ namespace DataAccess.services
     interface ITestRangeRepository : IBaseRepository<TestRanx, int>
     {
         List<TestRangeViewModel> GetTestRanges();
+
+        TestRanx GetRangeByTest(int TestID); 
     }
 }

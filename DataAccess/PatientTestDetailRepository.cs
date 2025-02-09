@@ -54,9 +54,9 @@ namespace DataAccess
                 HeaderDate = item.PatientHeader.HeaderDate,
                 TestID = item.TestID,
                 TestName = item.Test.TestName,
-                Price = (int)item.Test.Price,
+                Price = (int)(item.Test.Price ?? 0),
                 Result = (float)(item.Result ?? 0),
-                HasStar = (bool)(item.HasStar ?? false)
+                HasStar = item.HasStar == true ? "*" : "",
 
             }).ToList();
 

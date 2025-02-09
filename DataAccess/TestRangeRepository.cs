@@ -20,8 +20,8 @@ namespace DataAccess
         public TestRanx Get(int testRanxID)
         {
             return dbContext.TestRanges.FirstOrDefault(x => x.RangeID == testRanxID);
-
         }
+
 
         public List<TestRanx> GetAll()
         {
@@ -86,6 +86,12 @@ namespace DataAccess
                  Hazard = tr.Hazard
              })
              .ToList();
+        }
+
+        public TestRanx GetRangeByTest(int TestID)
+        {
+            return dbContext.TestRanges.FirstOrDefault(
+                item => item.TestID == TestID);
         }
     }
 }

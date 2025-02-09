@@ -24,7 +24,7 @@ namespace DomainModel.ViewModels
 
         public float Result { get; set; }
 
-        public bool HasStar { get; set; }
+        public string HasStar { get; set; }
     }
 
 }

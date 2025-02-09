@@ -43,7 +43,7 @@ namespace DataAccess
                 InsuranceTypeName = item.InsuranceType.InsuranceTypeName ?? "N/A",
                 DrName = item.DrName,
                 Age = item.Age,
-                TotalPrice = (long)(item.PatientTestDetails.Any() ? item.PatientTestDetails.Sum(itemDetail => itemDetail.Price) : 0)
+                TotalPrice = item.PatientTestDetails.Sum(itemDetail => (long?)itemDetail.Price) ?? 0
             }).ToList();
         }
 
