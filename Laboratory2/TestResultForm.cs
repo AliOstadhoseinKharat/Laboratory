@@ -48,6 +48,10 @@ namespace Laboratory2
                 }
             }
             this.Refresh();
+
+            lblPatient.Text = "";
+            lblReceptionDate.Text = "";
+            lblTest.Text = "";
         }
 
 
@@ -107,7 +111,22 @@ namespace Laboratory2
             if (testDetail != null)
             {
                 TestRanx testRange = testRangeRepo.GetRangeByTest(testDetail.TestID);
-                testDetail.Result = Convert.ToInt32(txtResult.Text);
+                double resultValue = double.Parse(txtResult.Text);
+                testDetail.Result = resultValue;
+                if (testRange != null)
+                {
+                    if (resultValue < testRange.FromValue || resultValue > testRange.ToValue)
+                    {
+                        testDetail.HasStar = true;
+                    }
+                    else
+                    {
+                        testDetail.HasStar = false;
+                    }
+                }
+                _repo.Update(testDetail);
+                BindGrid();
+                clearForm();
             }
         }
     }
